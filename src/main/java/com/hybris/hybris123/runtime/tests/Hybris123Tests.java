@@ -67,6 +67,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
@@ -112,7 +113,9 @@ SeleniumHelper.java */
         private static WebDriver dvr = null;
 
         private static final String yUSERNAME = "admin";
-        private static final String yPASSWORD = System.getenv("INITIAL_ADMIN");
+//        private static final String yPASSWORD = System.getenv("INITIAL_ADMIN");
+        private static final String yPASSWORD = "nimda";
+
 
         private static Wait<WebDriver> wait;
         private static Wait<WebDriver> longWait;
@@ -557,7 +560,7 @@ SeleniumHelper.java */
 
             LOG.debug("In getdriver");
             WebDriverManager.chromedriver().clearPreferences();
-            WebDriverManager.chromedriver().targetPath("resources/selenium").setup();
+//            WebDriverManager.chromedriver().targetPath("resources/selenium").setup();
 
             List<String> optionArguments = new ArrayList<>();
             // allow big enough screen for visibility of elements
@@ -1072,6 +1075,15 @@ SeleniumHelper.java */
     @Test
     @Snippet("com.hybris.hybris123.Hybris123Tests_testAcceleratorQuickDiveIsOk")
     public void testAcceleratorQuickDiveIsOk() throws Exception {
+//
+//        System.setProperty("webdriver.chrome.driver","/opt/chromedriver");
+        System.setProperty("webdriver.chrome.driver","src/main/resources/selenium/chromedriver");
+
+//        WebDriver driver = new ChromeDriver();
+//
+//        driver.get("http://www.baidu.com/");
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
         canLoginToHybrisCommerce();
         navigateTo("https://localhost:9002/yb2bacceleratorstorefront/?site=powertools&clear=true");
         assertTrue(getTitle().contains("Powertools"));
