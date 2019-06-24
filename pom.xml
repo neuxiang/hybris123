@@ -144,13 +144,13 @@
                         <version>${maven-compiler-plugin.version}</version>
                     </plugin>
 					
-                    <plugin>
-						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-maven-plugin</artifactId>
-						<configuration>
-<!--							<packagingExcludes>WEB-INF/classes/com/hybris/hybris123/contentpreparation/**</packagingExcludes>-->
-						</configuration>
-					</plugin>
+<!--                    <plugin>-->
+<!--						<groupId>org.springframework.boot</groupId>-->
+<!--						<artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--						<configuration>-->
+<!--&lt;!&ndash;							<packagingExcludes>WEB-INF/classes/com/hybris/hybris123/contentpreparation/**</packagingExcludes>&ndash;&gt;-->
+<!--						</configuration>-->
+<!--					</plugin>-->
 		
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
